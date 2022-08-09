@@ -1,69 +1,46 @@
 
-const body = document.getElementById('body')
-const foodName=[];
-function food(fooId,foodName,type,price){
-    this.fooId=fooId;
-    this.foodName=foodName;
+let tableEL = document.getElementById('table')
+let submit = document.getElementById('submit')
+var allFood=[];
+function Food(id,name,type,price){
+    this.id=id;
+    this.name=name;
     this.type=type;
     this.price=price
 
-    foodName.push(this);
+    allFood.push(this);
 }
 
 
 
-food.prototype.render = function () {
-    
-  const divEl=document.createElement('div');
-  body.appendchild(divEl);
-
-  const tableEl=document.createElement('table');
-  divEl.appendchild(tableEl);
-
-  const tr1El=document.createElement('tr');
-  tableEl.appendChild(tr1El);
-
-  const ID=document.createElement('th');
-  tr1El.appendChild(ID);
-  const Name=document.createElement('th');
-  tr1El.appendChild(Name);
-  const Type=document.createElement('th');
-  tr1El.appendChild(Type);
-  const PriceJD=document.createElement('th');
-  tr1El.appendChild(PriceJD);
-
+Food.prototype.render = function () {
   
-  for(const i = 0 ;i>foodName.length;i++){
-    const tr=document.createElement('tr');
-    tableEl.appendChild('tr');
-    for(const j=0;j<4;j++){
-        const td1=document.createElement('td')
-        tr2.appendChild(td1)
-        td.textContent=this.fooId;
+  
+  let newRow=document.createElement('tr');
+  tableEL.appendChild(newRow);
 
-        const td2=document.createElement('td')
-        tr2.appendChild(td2)
-        td.textContent=this.foodName;
+  let newId=document.createElement('td');
+  newRow.appendChild(newId);
+  newId.textContent=this.id;
 
-        const td3=document.createElement('td')
-        tr2.appendChild(td3)
-        td.textContent=this.type;
+  let newName=document.createElement('td');
+  newRow.appendChild(newName);
+  newName.textContent=this.name;
 
-        const td4=document.createElement('td')
-        tr2.appendChild(td4)
-        td.textContent=this.price;
-    }
-   
+  let newType=document.createElement('td');
+  newRow.appendChild(newType);
+  newType.textContent=this.type;
+
+  let newPrice=document.createElement('td');
+  newRow.appendChild(newPrice);
+  newPrice.textContent=this.price;
+
    
   }
 
-  
 
-
-}
-
-for(var i=0;i<foodName.length;i++){
-    foodName[i].render();
+for(var i=0;i<allFood.length;i++){
+    Food[i].render();
 }
 
 function Id(){
@@ -74,14 +51,14 @@ let form = document.getElementById("form");
 form.addEventListener("submit",handlesubmit);
 function handlesubmit(event){
     event.preventDefault();
-    var Fname=event.target.foodname.value;
+    var newFname=event.target.foodname.value;
     var foodList=event.target.foodTypes.value;
-    var Price=event.target.price.value;
+    var newPrice=event.target.price.value;
 
-    console.log(Fname,foodList,Price);
+    console.log(newFname,foodList,newPrice);
 
-     const newFood= new food(Id(),Fname,foodList,Price);
-    //  newFood.render();
+     const newFood= new Food(Id(),newFname,foodList,newPrice);
+     newFood.render();
     
 
 }
