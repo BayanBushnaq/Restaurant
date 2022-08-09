@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 11</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@500&family=Inspiration&family=Kaisei+Opti:wght@700&family=Oleo+Script+Swash+Caps&display=swap" rel="stylesheet"-->
+</head>
+
+
+<body id="body">
+
+
+    <header>
+       <!-- <a href="" class="logo">Resturant</a>   -->
+       <h1 class="logo">Resturant</h1>
+       
+       <ul>
+        <h1><li><a href="#">Home</a></li></h1>
+        <h1><li><a href="#bottom">About</a></li></h1>
+        <h1><li><a href="https://www.talabat.com">Services</a></li></h1>
+        <h1><li><a href="https://github.com/BayanBushnaq/Restaurant">Portofolio</a></li></h1>
+        <h1><li><a href="https://www.googlemaps.com">Branches</a></li></h1>
+        <h1><li><a href="https://www.yahoo.com">Contact</a></li></h1>
+       </ul>
+
+       
+    </header>
+
+    <main id="Main">
+        <div class="Form" >
+     <form id="form">
+        <label for="foodname">FoodName:</label><br>
+        <input type="text" id="foodname" name="foodname"><br>
+        <label for="foodlist">Types of FOOD:</label>
+       <select name="Types of Food" id="foodTypes">
+       <option value="Fruit and vegetables.">Fruit and vegetables.</option>
+       <option value="Starchy food.">Starchy food.</option>
+       <option value="Dairy.">Dairy.</option>
+       <option value="Protein.">Protein.</option>
+       <option value="Fat.">Fat.</option>
+       </select>
+       <label for="price">Price:</label><br>
+        <input type="text" id="price" name="price">
+        <input type="submit" value="Submit">
+    </form>
+       </div>
+
+
+    </main>
+
+
+    <section class="banner"></section>
+    <script type="text/javascript">
+        window.addEventListener("scroll",function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky" ,window.scrollY >0)
+        })
+        
+    </script>
+
+
+
+
+<footer>
+
+       <div id="bottom">
+       <div class="navbar">
+        <h1 class="Resturant">Resturant</h1>
+            <a href="https://www.facebook.com"><img src="./facebook.png" alt="facebook" class="img1"></a>
+            <a href="https://www.instagram.com" ><img src="./instagram.png" alt="instagram" class="img2"></a>
+            <a href="https://www.copyright.gov/"><img src="./law.png" alt="copyrigth" class="img3"></a>
+            
+       </div>
+    </div>
+    
+</footer>  
+<script src="./app.js"></script>
+</body>
+</html>
