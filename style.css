@@ -144,3 +144,11 @@ header.sticky ul li a
     
     
 }
+
+table, th, td {
+    margin-top: 8%;
+    border: 7px solid black;
+    border-collapse: collapse;
+    font-weight: bold;
+    text-align: center;
+  }
