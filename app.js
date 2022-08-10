@@ -1,6 +1,6 @@
 'use strict';
-let tableEL = document.getElementById('table')
-let submit = document.getElementById('submit')
+// let tableEL = document.getElementById('table')
+// let submit = document.getElementById('submit')
 let form = document.getElementById("form");
 
 
@@ -16,35 +16,40 @@ function Food(id,name,type,price){
 
 
 
-Food.prototype.render = function (arrayData) {
+// Food.prototype.render = function (arrayData) {
   
   
-  let newRow=document.createElement('tr');
-  tableEL.appendChild(newRow);
+//   let newRow=document.createElement('tr');
+//   tableEL.appendChild(newRow);
 
-  let newId=document.createElement('td');
-  newRow.appendChild(newId);
-  newId.textContent=this.id;
+//   let newId=document.createElement('td');
+//   newRow.appendChild(newId);
+//   newId.textContent=this.id;
 
-  let newName=document.createElement('td');
-  newRow.appendChild(newName);
-  newName.textContent=this.name;
+//   let newName=document.createElement('td');
+//   newRow.appendChild(newName);
+//   newName.textContent=this.name;
 
-  let newType=document.createElement('td');
-  newRow.appendChild(newType);
-  newType.textContent=this.type;
+//   let newType=document.createElement('td');
+//   newRow.appendChild(newType);
+//   newType.textContent=this.type;
 
-  let newPrice=document.createElement('td');
-  newRow.appendChild(newPrice);
-  newPrice.textContent=this.price;
+//   let newPrice=document.createElement('td');
+//   newRow.appendChild(newPrice);
+//   newPrice.textContent=this.price;
 
    
-  }
+//   }
 
 
 // for(var i=0;i<allFood.length;i++){
 //     Food[i].render();
 // }
+
+function saveData(data) {
+  let stringObj = JSON.stringify(data);
+  localStorage.setItem('foods', stringObj);
+}
 
 function Id(){
 var val = Math.floor(1000 + Math.random() * 9000);
@@ -61,46 +66,40 @@ function handlesubmit(event){
     console.log(newFname,foodList,newPrice);
 
      let newFood= new Food(Id(),newFname,foodList,newPrice);
-     newFood.render();
+    //  newFood.render();
     saveData(allFood);
      
 }
 
 
-function saveData(data) {
-  let stringObj = JSON.stringify(data);
-  localStorage.setItem('foods', stringObj);
-}
+
 // let arrayNew=[];
 // getData();
-function getData() {
-  let retrievedData = localStorage.getItem('foods');
+// function getData() {
+//   let retrievedData = localStorage.getItem('foods');
   
 
-  let arrayData = JSON.parse(retrievedData);
+//   let arrayData = JSON.parse(retrievedData);
 
-  // console.log(arrayData);
+//   // console.log(arrayData);
   
-  if (arrayData != null) {
+//   if (arrayData != null) {
     
-    for (let i = 0; i < arrayData.length; i++) {
-      new Food(
-        arrayData[i].id,
-        arrayData[i].name,
-        arrayData[i].type,
-        arrayData[i].price,
+//     for (let i = 0; i < arrayData.length; i++) {
+//       new Food(
+//         arrayData[i].id,
+//         arrayData[i].name,
+//         arrayData[i].type,
+//         arrayData[i].price,
        
-      );
-      // arrayNew.push(arrayData);
-    }}
+//       );
+//       // arrayNew.push(arrayData);
+//     }}
 
    
-    for(var j=0;j<allFood.length;j++){
-      allFood[i].render()
-      
-    }
-  }
   
-getData();
+//   }
+  
+// getData();
 
 
