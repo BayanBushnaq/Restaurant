@@ -146,8 +146,9 @@ header.sticky ul li a
 }
 
 table, th, td {
-    margin-top: 8%;
+    margin-top: 20%;
     border: 7px solid black;
+    background-color: aliceblue;
     border-collapse: collapse;
     font-weight: bold;
     text-align: center;

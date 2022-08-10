@@ -1,6 +1,9 @@
-
+'use strict';
 let tableEL = document.getElementById('table')
 let submit = document.getElementById('submit')
+let form = document.getElementById("form");
+
+
 var allFood=[];
 function Food(id,name,type,price){
     this.id=id;
@@ -13,7 +16,7 @@ function Food(id,name,type,price){
 
 
 
-Food.prototype.render = function () {
+Food.prototype.render = function (arrayData) {
   
   
   let newRow=document.createElement('tr');
@@ -39,15 +42,15 @@ Food.prototype.render = function () {
   }
 
 
-for(var i=0;i<allFood.length;i++){
-    Food[i].render();
-}
+// for(var i=0;i<allFood.length;i++){
+//     Food[i].render();
+// }
 
 function Id(){
 var val = Math.floor(1000 + Math.random() * 9000);
 return val ;}
 
-let form = document.getElementById("form");
+// let form = document.getElementById("form");
 form.addEventListener("submit",handlesubmit);
 function handlesubmit(event){
     event.preventDefault();
@@ -57,11 +60,47 @@ function handlesubmit(event){
 
     console.log(newFname,foodList,newPrice);
 
-     const newFood= new Food(Id(),newFname,foodList,newPrice);
+     let newFood= new Food(Id(),newFname,foodList,newPrice);
      newFood.render();
-    
-
+    saveData(allFood);
+     
 }
 
+
+function saveData(data) {
+  let stringObj = JSON.stringify(data);
+  localStorage.setItem('foods', stringObj);
+}
+// let arrayNew=[];
+// getData();
+function getData() {
+  let retrievedData = localStorage.getItem('foods');
+  
+
+  let arrayData = JSON.parse(retrievedData);
+
+  // console.log(arrayData);
+  
+  if (arrayData != null) {
+    
+    for (let i = 0; i < arrayData.length; i++) {
+      new Food(
+        arrayData[i].id,
+        arrayData[i].name,
+        arrayData[i].type,
+        arrayData[i].price,
+       
+      );
+      // arrayNew.push(arrayData);
+    }}
+
+   
+    for(var j=0;j<allFood.length;j++){
+      allFood[i].render()
+      
+    }
+  }
+  
+getData();
 
 
